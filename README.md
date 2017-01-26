@@ -1,6 +1,6 @@
-# \<Emojify\>
+#Emojify
 
-Polymer-based app that converts text to their emoji equivalent. Created for [Dicord](https://discordapp.com/) emojis.
+Polymer-based app that converts text to their emoji equivalent. Created for [Discord](https://discordapp.com/) emojis.
 
 ## Install the Polymer-CLI
 
