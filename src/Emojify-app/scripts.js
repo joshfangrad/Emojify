@@ -47,7 +47,7 @@ function Convert(word) {
         for (var i in letterSplit) {
             word += ' ';
             if (/[a-z]/i.test(letterSplit[i])) {
-                word += `:regional_indicator_${(letterSplit[i].toLowerCase())}:`;
+                word += ':regional_indicator_' + letterSplit[i].toLowerCase() + ':';
             } else if (/[0-9]/.test(letterSplit[i])) {
                 word += numText[parseInt(letterSplit[i])];
             } else if (/#/.test(letterSplit[i])) {
