@@ -1,0 +1,25 @@
+<link rel="import" href="/../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="custom-validator.html">
+
+<dom-module id='validation-element'>
+    <template>
+        <custom-validator id="valid1" validator-name="validator1"></custom-validator>
+        <paper-input auto-validate id="output" label='Output' char-counter error-message="Over Discord character limit!" readonly maxlength="2000" validator='validator1'></paper-input>
+    </template>
+</dom-module>
+<script>
+
+    Polymer({
+        is: 'validation-element',
+
+        validate1: function(value) {
+            return value.length < 2000;
+        },
+
+        ready: function() {
+            this.$.valid1.validate = this.validate1.bind(this);
+        }
+    });
+
+</script>

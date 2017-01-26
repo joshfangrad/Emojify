@@ -1,0 +1,63 @@
+h1, h2, h3, p, div {
+    font-family: "Arial", Times, sans-serif;
+    text-align: center;
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+.img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    max-width: 500px;
+}
+
+.grey {
+    color: rgb(128, 128, 128);
+    margin-top: 0px;
+    margin-bottom: 10%;
+}
+
+.mid {
+    margin: auto;
+    width: 60%;
+    padding: 30px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+paper-button.cap {
+    background-color: rgb(128, 128, 128);
+    color: white;
+    padding: 5px;
+}
+
+paper-button.cap[active] {
+    background-color: rgb(59, 136, 194);
+}
+
+paper-button.discord {
+    background-color: rgb(128, 128, 128);
+    color: white;
+    padding: 5px;
+}
+
+paper-button.discord:hover {
+    background-color: rgb(59, 136, 194);
+}
+
+paper-button.copy {
+    background-color: rgb(59, 136, 194);
+    color: white;
+    padding: 5px;
+}

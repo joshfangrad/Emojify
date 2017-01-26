@@ -1,0 +1,7 @@
+{
+  "name": "Emojify",
+  "short_name": "Emojify",
+  "description": "app that converts text to their emoji equivalent.",
+  "start_url": "/",
+  "display": "standalone"
+}
