@@ -64,3 +64,17 @@ function Convert(word) {
     }
     return word;
 }
+
+function GetTip() {
+    var tips = [
+        'Tip: Any emojis typed into the input area will be carried over.',
+        'Made with polymer!',
+        'Tip: \"Cap ends\" will put the \"Replace spaces\" text on either end.',
+        'Tip: Any characters that aren\'t emojis will evaluate to :x:.',
+        'Tip: If you use this often, people will like you more.',
+        'Tip: Help I\'m trapped inside a web app',
+        'Tip: these emojis will probably only work with discord.',
+        'Mobile compatible!'
+    ];
+    return tips[Math.floor(Math.random() * tips.length)];
+}
