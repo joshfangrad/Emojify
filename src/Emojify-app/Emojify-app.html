@@ -1,38 +1,53 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../bower_components/cbn-copy-clipboard/cbn-copy-clipboard.html">
 <link rel="import" href="../../bower_components/paper-input/paper-textarea.html">
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-tooltip/paper-tooltip.html">
-<link rel="import" href="../../bower_components/cbn-copy-clipboard/cbn-copy-clipboard.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/s-paper-checkbox/paper-checkbox.html">
 <link rel="import" href="validation-element.html">
 <link rel="stylesheet" href="../../styles/style.css">
 <script src="scripts.js"></script>
 
 <dom-module id="Emojify-app">
     <template>
-    <style>
-      :host {
-        display: block;
-      }
+    <style include="iron-flex">
+        :host {
+            display: block;
+        }
+        paper-checkbox {
+            --paper-checkbox-checked-color: rgb(59, 136, 194);
+            --paper-checkbox-label-color: rgb(128, 128, 128);
+            --paper-checkbox-label-spacing: 3px;
+        }
+        paper-input, paper-textarea {
+            --paper-input-container-focus-color: rgb(59, 136, 194);
+        }
+
     </style>
+
     <a href="https://github.com/Fustran/Emojify" target = "_blank"><img src="../../images/github.png" class="github"></img><a>
     <img src="../../images/title.png" class="title"></img>
-    <div class="center">
-        <p class="grey">Converts text to emojis. Made for <a href = "https://discordapp.com/" target = "_blank" class="link"><paper-button raised class="discord">Discord</paper-button></a></p>
-        <paper-textarea label="Input" id="inputbox" on-keyup="keyUp"></paper-textarea>
-        <div class="mid">
-            <paper-input label= "Replace spaces (optional)" id="replace" on-keyup="keyUp"></paper-input>
-            <paper-button toggles raised class="cap" on-click="keyUp" id="cap">cap ends</paper-button>
-            <paper-tooltip for="cap">Cap each end of the message with the supplied replace text.</paper-tooltip>
-        </div>
-        <validation-element></validation-element>
-        <div class="center">
-            <cbn-copy-clipboard id="clip" value="copy">
-                <paper-button on-click="setVal" raised class="copy">Copy</papper-button>
-            </cbn-copy-clipboard>
-        </div>
+    <div class="layout horizontal top">
+        <p class="grey">Converts text to emojis. Made for</p>
+        <a href = "https://discordapp.com/" target = "_blank"><paper-button raised class="discord"><iron-icon src="../../images/discordlogo.png" class="discordimg"></iron-icon></paper-button></a>
     </div>
-    <p class="tips" id="tips">tip</p>
+    <div class="center">
+        <paper-textarea label="Input" id="inputbox" on-keyup="keyUp" class="input"></paper-textarea>
+        <div class="layout horizontal mid">
+            <paper-input label= "Replace spaces (optional)" id="replace" on-keyup="keyUp" class="flex"></paper-input>
+            <paper-checkbox class="cap" on-click="keyUp" id="cap">Cap</paper-checkbox>
+        </div>
+        <paper-tooltip for="cap">Cap each end of the message with the supplied replace text.</paper-tooltip>
+        <validation-element></validation-element>
+        <cbn-copy-clipboard id="clip" value="copy">
+            <paper-button on-click="setVal" raised class="copy">Copy</papper-button>
+        </cbn-copy-clipboard>
+    </div>
+    <p class="tips" id="tips"></p>
 
   </template>
 
@@ -51,8 +66,7 @@
                 }
             }
         });
-
-        window.onload = function load(){
+        window.onload = function load() {
             document.getElementById("tips").innerHTML = GetTip();
         };
     </script>

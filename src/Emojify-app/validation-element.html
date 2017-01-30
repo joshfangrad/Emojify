@@ -4,12 +4,16 @@
 
 <dom-module id='validation-element'>
     <template>
+    <style>
+        paper-input {
+            --paper-input-container-focus-color: rgb(59, 136, 194);
+        }
+    </style>
         <custom-validator id="valid1" validator-name="validator1"></custom-validator>
         <paper-input auto-validate id="output" label='Output' char-counter error-message="Over Discord character limit!" readonly maxlength="2000" validator='validator1'></paper-input>
     </template>
 </dom-module>
 <script>
-
     Polymer({
         is: 'validation-element',
 
@@ -21,5 +25,4 @@
             this.$.valid1.validate = this.validate1.bind(this);
         }
     });
-
 </script>

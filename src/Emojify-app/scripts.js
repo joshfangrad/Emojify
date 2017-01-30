@@ -1,5 +1,6 @@
 var emojiReg = new RegExp(/(:[\w0-9]+:)/ig);
 
+
 function Emojify(text, replace, cap) {
     if (text) {
         var wordSplit = text.split(' ');
@@ -31,7 +32,7 @@ function Emojify(text, replace, cap) {
             returnString = wordSplit.join('    ')
         }
         if (cap && replace) {
-            returnString = replace.toString() + returnString + replace.toString();
+            returnString = " " + replace.toString() + " " + returnString + " " + replace.toString() + " ";
         }
         return returnString;
     } else {
@@ -55,7 +56,19 @@ function Convert(word) {
             } else if (/\*/.test(letterSplit[i])) {
                 word += ':asterisk:';
             } else if (/\?/.test(letterSplit[i])) {
-                word += ':question:'
+                word += ':question:';
+            } else if (/\+/.test(letterSplit[i])) {
+                word += ':heavy_plus_sign:';
+            } else if (/\-/.test(letterSplit[i])) {
+                word += ':heavy_minus_sign:';
+            } else if (/\</.test(letterSplit[i])) {
+                word += ':arrow_backward:';
+            } else if (/\>/.test(letterSplit[i])) {
+                word += ':arrow_forward:';
+            } else if (/\^/.test(letterSplit[i])) {
+                word += ':arrow_up_small:';
+            } else if (/\$/.test(letterSplit[i])) {
+                word += ':heavy_dollar_sign:';
             } else {
                 //invalid chars become Xs
                 word += ':x:';
@@ -69,12 +82,14 @@ function GetTip() {
     var tips = [
         'Tip: Any emojis typed into the input area will be carried over.',
         'Made with polymer!',
-        'Tip: \"Cap ends\" will put the \"Replace spaces\" text on either end.',
+        'Tip: \"Cap\" will put the \"Replace spaces\" text on either end.',
         'Tip: Any characters that aren\'t emojis will evaluate to :x:.',
-        'Tip: If you use this often, people will like you more.',
         'Tip: Help I\'m trapped inside a web app',
         'Tip: these emojis will probably only work with discord.',
-        'Mobile compatible!'
+        'At least 80% mobile compatible!',
+        'Great for parties!',
+        'Thinking of tips is hard.',
+        'Tip: You can put anything you want in the \"Replace spaces\" field.'
     ];
     return tips[Math.floor(Math.random() * tips.length)];
 }
