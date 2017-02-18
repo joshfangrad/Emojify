@@ -19,8 +19,5 @@
     "url": "https://github.com/Fustran/Emojify/issues"
   },
   "homepage": "https://github.com/Fustran/Emojify#readme",
-  "dependencies": {
-    "emoji-regex": "^6.1.0",
-    "requirejs": "^2.3.2"
-  }
+  "dependencies": {}
 }
