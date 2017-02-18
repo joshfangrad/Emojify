@@ -69,6 +69,8 @@ function Convert(word) {
                 word += ':arrow_up_small:';
             } else if (/\$/.test(letterSplit[i])) {
                 word += ':heavy_dollar_sign:';
+            } else if (/\!/.test(letterSplit[i])) {
+                word += ':exclamation:';
             } else {
                 //invalid chars become Xs
                 word += ':x:';
