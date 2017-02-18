@@ -1,0 +1,26 @@
+{
+  "name": "emojify",
+  "version": "1.0.0",
+  "description": "app that converts text to their emoji equivalent.",
+  "main": "service-worker.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fustran/Emojify.git"
+  },
+  "author": "Josh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fustran/Emojify/issues"
+  },
+  "homepage": "https://github.com/Fustran/Emojify#readme",
+  "dependencies": {
+    "emoji-regex": "^6.1.0",
+    "requirejs": "^2.3.2"
+  }
+}

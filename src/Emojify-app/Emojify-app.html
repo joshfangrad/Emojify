@@ -6,8 +6,7 @@
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-tooltip/paper-tooltip.html">
-<link rel="import" href="../../bower_components/paper-card/paper-card.html">
-<link rel="import" href="../../bower_components/s-paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html">
 <link rel="import" href="validation-element.html">
 <link rel="stylesheet" href="../../styles/style.css">
 <script src="scripts.js"></script>
@@ -21,6 +20,7 @@
         paper-checkbox {
             --paper-checkbox-checked-color: rgb(59, 136, 194);
             --paper-checkbox-label-color: rgb(128, 128, 128);
+            --paper-checkbox-unchecked-color: rgb(128, 128, 128);
             --paper-checkbox-label-spacing: 3px;
         }
         paper-input, paper-textarea {
@@ -44,9 +44,10 @@
         <paper-tooltip for="cap">Cap each end of the message with the supplied replace text.</paper-tooltip>
         <validation-element></validation-element>
         <cbn-copy-clipboard id="clip" value="copy">
-            <paper-button on-click="setVal" raised class="copy">Copy</papper-button>
+            <paper-button on-click="setCopyVal" raised class="copy">Copy</papper-button>
         </cbn-copy-clipboard>
     </div>
+    <div class="layout horizontal preview" id="preview"></div>
     <p class="tips" id="tips"></p>
 
   </template>
@@ -59,7 +60,7 @@
             keyUp: function(e) {
                 document.getElementById("output").value = Emojify(document.getElementById("inputbox").value, document.getElementById("replace").value, document.getElementById("cap").active);
             },
-            setVal: function() {
+            setCopyVal: function() {
                 var text = document.getElementById("output").value;
                 if (text.length > 0) {
                     document.getElementById("clip").value = text;
@@ -68,6 +69,7 @@
         });
         window.onload = function load() {
             document.getElementById("tips").innerHTML = GetTip();
+
         };
     </script>
 </dom-module>
