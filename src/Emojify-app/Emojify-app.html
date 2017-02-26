@@ -49,6 +49,7 @@
     </div>
     <div class="layout horizontal preview" id="preview"></div>
     <p class="tips" id="tips"></p>
+    <a href="https://github.com/Fustran/Emojify/issues/new"><paper-button class="bug">Found a bug?</paper-button></a>
 
   </template>
 
@@ -64,6 +65,8 @@
                 var text = document.getElementById("output").value;
                 if (text.length > 0) {
                     document.getElementById("clip").value = text;
+                } else {
+                    document.getElementById("clip").value = " ";
                 }
             }
         });
@@ -81,6 +84,5 @@
 
         ga('create', 'UA-92171950-1', 'auto');
         ga('send', 'pageview');
-
 </script>
 </dom-module>

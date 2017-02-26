@@ -27,7 +27,7 @@ function Emojify(text, replace, cap) {
         var returnString = "";
         //add spaces, or space replace characters
         if (replace.length > 0) {
-            returnString = wordSplit.join(replace.toString())
+            returnString = wordSplit.join(" " + replace.toString() + " ")
         } else {
             returnString = wordSplit.join('    ')
         }
@@ -46,7 +46,9 @@ function Convert(word) {
         var letterSplit = word.split('');
         word = '';
         for (var i in letterSplit) {
-            word += ' ';
+            if (i != 0) {
+                word += ' ';
+            }
             if (/[a-z]/i.test(letterSplit[i])) {
                 word += ':regional_indicator_' + letterSplit[i].toLowerCase() + ':';
             } else if (/[0-9]/.test(letterSplit[i])) {
@@ -72,8 +74,7 @@ function Convert(word) {
             } else if (/\!/.test(letterSplit[i])) {
                 word += ':exclamation:';
             } else {
-                //invalid chars become Xs
-                word += ':x:';
+                //add warning eventually
             }
         }
     }
@@ -82,16 +83,23 @@ function Convert(word) {
 
 function GetTip() {
     var tips = [
-        'Tip: Any emojis typed into the input area will be carried over.',
-        'Made with polymer!',
-        'Tip: \"Cap\" will put the \"Replace spaces\" text on either end.',
-        'Tip: Any characters that aren\'t emojis will evaluate to :x:.',
-        'Tip: Help I\'m trapped inside a web app',
-        'Tip: these emojis will probably only work with discord.',
+        '<p class="rainbowTip">Totally tubular, dude.</p>',
+        '( ͡° ͜ʖ ͡°)',
+        'More features coming soon. Probably.',
+        'Any emojis typed into the input area will be carried over.',
+        'Made with <a href="https://www.polymer-project.org/1.0/">polymer!</a>',
+        '\"Cap\" will put the \"Replace spaces\" text on either end.',
+        'Help I\'m trapped inside a web app',
         'At least 80% mobile compatible!',
         'Great for parties!',
-        'Thinking of tips is hard.',
-        'Tip: You can put anything you want in the \"Replace spaces\" field.'
+        'You can put anything you want in the \"Replace spaces\" field.',
+        'Anything put in the \"Replace spaces\" field will be added as-is, no conversion.',
+        'Any bug reports are greatly appreciated.',
+        'Stop playing Hanzo. Please.',
+        'Memes are the life-blood of Discord.',
+        'Got a suggestion? Feel free to put it on my github.',
+        '<p class="white">Ooh, I\'m a secret! You found me! Good work, Wow! NICE!</p>',
+        'Characters like apostrophes or colons don\'t have emoji counterparts, so they won\'t show up.'
     ];
     return tips[Math.floor(Math.random() * tips.length)];
 }
