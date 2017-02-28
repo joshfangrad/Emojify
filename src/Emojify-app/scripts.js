@@ -1,4 +1,7 @@
 var emojiReg = new RegExp(/(:[\w0-9]+:)/ig);
+//fetch('file.json').then((file) => JSON.parse(file)).then((obj) => {
+//doSomething
+//});
 
 
 function Emojify(text, replace, cap) {

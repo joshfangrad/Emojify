@@ -19,5 +19,8 @@
     "url": "https://github.com/Fustran/Emojify/issues"
   },
   "homepage": "https://github.com/Fustran/Emojify#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0"
+  }
 }
