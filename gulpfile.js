@@ -11,7 +11,7 @@ var paths = {
     css: 'styles/*.css',
 };
 //gulpfile for building gh-pages branch
-gulp.task('default', ['removeIgnore', 'install', 'changePath', 'build']);
+gulp.task('default', ['removeIgnore', 'install', 'changePath']);
 
 //remove gitignore so dependencies and build end up on the gh-pages branch
 gulp.task('removeIgnore', function() {
@@ -19,7 +19,7 @@ gulp.task('removeIgnore', function() {
 });
 
 //make sure we have all dependencies installed
-gulp.task('install', function() {
+gulp.task('install', ['removeIgnore'] function() {
     gulp.src(['./bower.json', './package.json'])
         .pipe(install());
 });
