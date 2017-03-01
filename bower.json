@@ -1,5 +1,5 @@
 {
-  "name": "Emojify",
+  "name": "emojify",
   "description": "app that converts text to their emoji equivalent.",
   "main": "index.html",
   "dependencies": {

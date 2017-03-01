@@ -19,7 +19,7 @@ gulp.task('removeIgnore', function() {
 });
 
 //make sure we have all dependencies installed
-gulp.task('install', ['removeIgnore'] function() {
+gulp.task('install', ['removeIgnore'], function() {
     gulp.src(['./bower.json', './package.json'])
         .pipe(install());
 });
