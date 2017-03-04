@@ -8,10 +8,10 @@ body {
 }
 
 .center {
-    margin: 30px;
+    margin: 20px;
     margin-left: auto;
     margin-right: auto;
-    width: 42%;
+    width: 48%;
     padding: 30px;
     padding-top: 5px;
     padding-bottom: 60px;
@@ -30,17 +30,32 @@ body {
 }
 
 .layout.horizontal.preview {
-    flex-flow: row wrap;
+    margin: auto;
+    width: 52.6%;
+    max-height: 300px;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 2px 6px #888888;
 }
 
+img.emoji {
+    margin: 3px;
+    max-width: 32px;
+}
+
+div.spacer {
+    width: 20px;
+}
+
 p.grey {
     color: rgb(128, 128, 128);
     margin-top: 8px;
+    padding-top: 8px;
+    padding-bottom: 20px;
 }
 
 .white {
@@ -72,7 +87,6 @@ img.title {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 20px;
     width: 80%;
     max-width: 500px;
 }
@@ -147,11 +161,30 @@ paper-textarea.input {
         max-width: 300px;
     }
 
+    img.emoji {
+        margin: 2px;
+        max-width: 22px;
+    }
+
     p {
         font-size: 14px;
     }
 
+    p.grey {
+        padding-top: 3px;
+        padding-bottom: 10px;
+    }
+
+    .layout.horizontal.preview {
+        width: 95%;
+        padding-left: 5px;
+        padding-right: 5px;
+        max-height: 100px;
+    }
+
     .center {
+        margin-top: 15px;
+        margin-bottom: 15px;
         width: 80%;
     }
 }
