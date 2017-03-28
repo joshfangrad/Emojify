@@ -24,7 +24,7 @@ gulp.task('install', ['removeIgnore'], function() {
         .pipe(install());
 });
 
-//change to abs pathing so it can run on github pages
+//change rel pathing so it can run on github pages
 gulp.task('changePath', function() {
     gulp.src([paths.app])
         .pipe(replace('../../', '/Emojify/'))
