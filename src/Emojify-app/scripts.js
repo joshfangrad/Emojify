@@ -26,24 +26,25 @@ function Emojify(text, replace, cap) {
             }
         }
 
-        var returnString = "";
-        var previewString = "";
+        var returnString = '';
+        var previewString = '';
+        var space = ' ';
         //add spaces, or space replace characters
         if (replace.length > 0) {
-            returnString = wordSplit.join(" " + replace.toString() + " ");
+            returnString = wordSplit.join(space + replace.toString() + space);
             previewString = returnString;
         } else {
             returnString = wordSplit.join('    ');
             previewString = wordSplit.join('<div class="spacer"></div>');
         }
         if (cap && replace) {
-            returnString = " " + replace.toString() + " " + returnString + " " + replace.toString() + " ";
+            returnString = space + replace.toString() + space + returnString + space + replace.toString() + space;
             previewString = returnString;
         }
         document.getElementById('preview').innerHTML = twemoji.parse(emojione.shortnameToUnicode(previewString));
         return emojione.shortnameToUnicode(returnString);
     } else {
-        document.getElementById('preview').innerHTML = "";
+        document.getElementById('preview').innerHTML = '';
         return;
     };
 };
@@ -92,6 +93,7 @@ function Convert(word) {
 function GetTip() {
     var tips = [
         '<p class="rainbowTip">Totally tubular, dude.</p>',
+        'You can input emojis via actual emojis, or :shortname: format.',
         '( ͡° ͜ʖ ͡°)',
         'More features coming soon. Probably.',
         'Any emojis typed into the input area will be carried over.',

@@ -9,7 +9,8 @@
     "paper-tooltip": "PolymerElements/paper-tooltip#^1.1.3",
     "cbn-copy-clipboard": "CBN-IT/cbn-copy-clipboard#^1.0.1",
     "paper-checkbox": "PolymerElements/paper-checkbox#^1.4.2",
-    "s-paper-checkbox": "^1.4.2-5"
+    "s-paper-checkbox": "^1.4.2-5",
+    "paper-styles": "PolymerElements/paper-styles#^1.2.1"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
