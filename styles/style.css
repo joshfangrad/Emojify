@@ -143,7 +143,7 @@ paper-textarea.input {
         max-width: 85px;
         top: auto;
         bottom: 0px;
-        content: url("../../images/githubMobile.png");
+        content: url("/Emojify/images/githubMobile.png");
     }
 
     paper-button.discord {

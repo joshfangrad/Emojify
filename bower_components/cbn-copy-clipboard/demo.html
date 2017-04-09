@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>cbn-copy-clipboard</title>
+    <link rel="import" href="../cbn-copy-clipboard/cbn-copy-clipboard.html">
+	<link rel="import" href="../paper-styles/color.html">
+	<link rel="import" href="../iron-demo-helpers/demo-snippet.html">
+	<link rel="import" href="../iron-demo-helpers/demo-pages-shared-styles.html">
+	<link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
+	<link rel="import" href="../paper-input/paper-textarea.html">
+	<link rel="import" href="../paper-ripple/paper-ripple.html">
+	<link rel="import" href="../paper-button/paper-button.html">
+
+	<style is="custom-style" include="demo-pages-shared-styles">
+		.vertical-section-container {
+			max-width: 600px;
+		} 
+	</style>
+</head>
+<body unresolved>
+
+	<div class="vertical-section-container centered">
+		<h2>Cbn copy clipboard Demo</h2>
+		<p><li>To use the element just add some text inside the tags</li></p>
+		<demo-snippet class="centered-demo">
+			<template>
+				<cbn-copy-clipboard>This text will be copied on click.</cbn-copy-clipboard>
+			</template>
+		</demo-snippet>
+		<paper-textarea label="Paste the text HERE"></paper-textarea>
+		<br/> <br/>
+		<p><li> You can also add a <b>value</b> attribute to the element tag and assign any value you want to be copied
+		<demo-snippet class="centered-demo">
+			<template>
+				<cbn-copy-clipboard value="valueToBeCopied">
+					<paper-button raised>Click me</papper-button>
+				</cbn-copy-clipboard>
+			</template>
+		</demo-snippet>
+		<paper-textarea label="Paste the text HERE"></paper-textarea>
+	</div>
+	<div id="background" class="style-scope paper-ripple">asdasd</div>
+
+</body>
+</html>

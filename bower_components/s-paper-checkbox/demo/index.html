@@ -1,0 +1,116 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html>
+  <head>
+    <title>s-checkbox demo</title>
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../s-checkbox.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+      s-checkbox {
+        display: block;
+        margin-right: 24px;
+      }
+
+      demo-snippet {
+        margin-bottom: 40px;
+      }
+      .vertical-section-container {
+        max-width: 550px;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <div class="vertical-section-container centered">
+      <h3>Checkboxes can be checked or unchecked, or disabled entirely</h3>
+      <demo-snippet class="centered-demo">
+        <template>
+          <s-checkbox>Checkbox</s-checkbox>
+          <s-checkbox checked>Checkbox</s-checkbox>
+          <s-checkbox disabled>Disabled</s-checkbox>
+        </template>
+      </demo-snippet>
+
+      <h3>Checkboxes can hide the ripple effect using the <i>noink</i> attribute</h3>
+      <demo-snippet class="centered-demo">
+        <template>
+          <s-checkbox noink>Checkbox</s-checkbox>
+        </template>
+      </demo-snippet>
+
+      <h3>Checkboxes can be styled using custom properties</h3>
+      <demo-snippet class="centered-demo small-text">
+        <template>
+          <style is="custom-style">
+            s-checkbox.red {
+              --s-checkbox-checked-color: var(--paper-red-500);
+              --s-checkbox-checked-ink-color: var(--paper-red-500);
+              --s-checkbox-unchecked-color: var(--paper-red-900);
+              --s-checkbox-unchecked-ink-color: var(--paper-red-900);
+              --s-checkbox-label-color: var(--paper-red-500);
+              --s-checkbox-vertical-align: top;
+            }
+
+            s-checkbox.green {
+              align-self: center;
+              border: 1px solid var(--paper-green-200);
+              padding: 8px 16px;
+
+              --s-checkbox-checked-color: var(--paper-green-500);
+              --s-checkbox-checked-ink-color: var(--paper-green-500);
+              --s-checkbox-unchecked-color: var(--paper-green-900);
+              --s-checkbox-unchecked-ink-color: var(--paper-green-900);
+              --s-checkbox-label-color: var(--paper-green-500);
+              --s-checkbox-label-spacing: 0;
+              --s-checkbox-margin: 8px 16px 8px 0;
+              --s-checkbox-vertical-align: top;
+            }
+
+            s-checkbox.blue {
+              --s-checkbox-checked-color: var(--paper-blue-500);
+              --s-checkbox-checked-ink-color: var(--paper-blue-500);
+              --s-checkbox-unchecked-color: var(--paper-blue-900);
+              --s-checkbox-unchecked-ink-color: var(--paper-blue-900);
+              --s-checkbox-label-color: var(--paper-blue-500);
+              --s-checkbox-label-checked-color: var(--paper-blue-900);
+            }
+
+            s-checkbox .subtitle {
+              display: block;
+              font-size: 0.8em;
+              margin-top: 2px;
+              max-width: 150px;
+            }
+          </style>
+
+          <s-checkbox class="red">
+            Checkbox
+            <span class="subtitle">With a subtitle</span>
+          </s-checkbox>
+          <s-checkbox checked class="green">
+            Checkbox
+            <span class="subtitle">
+              With a longer subtitle that wraps to another line
+            </span>
+          </s-checkbox>
+          <s-checkbox class="blue">Checkbox</s-checkbox>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
